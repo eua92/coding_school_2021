@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+    margin-top: 10px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+}
+
+.header {
+    border-bottom: 1px solid lightgrey;
+    background-color: whitesmoke;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.row {
+    padding-left: 20px;
+}
+
+button {
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    background-color: transparent;
+}
+
+button:hover {
+    background-color: lightgray;
+}
+
+.save-icon {
+    color: orangered;
+    border: 1px solid orangered;
+    border-radius: 3px;
+}
+
+.save-icon:hover {
+    color: #992900;
+    border: 1px solid #992900;
+}
+
+.arrow-icon {
+    color: grey;
+    border: 1px solid grey;
+    border-radius: 3px;
+}
+
+.arrow-icon:hover {
+    color: #4d4d4d;
+    border: 1px solid #4d4d4d;
+}
+
+.control {
+    margin-right: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+}
+
+label {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.second-part {
+    margin-top: 70px;
+    margin-bottom: 40px;
+}
