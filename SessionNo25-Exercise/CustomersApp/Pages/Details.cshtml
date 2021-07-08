@@ -1,0 +1,66 @@
+﻿@page "{id}"
+@model CustomersApp.Pages.DetailsModel
+@{
+}
+
+
+<div>
+    <form id="frmMain" method="post" onsubmit="ValidateForm();">
+        <input id="txtSelectedId" type="hidden" value="@Model.SelectedCustomer.Id">
+        <table>
+            <tr>
+                <td><label for="txtName">Name</label></td>
+                <td><input id="txtName" name="name" value="@Model.SelectedCustomer.Name"></td>
+            </tr>
+            <tr>
+                <td><label for="txtSurname">Surname</label></td>
+                <td><input id="txtSurname" name="surname" value="@Model.SelectedCustomer.Surname"></td>
+            </tr>
+            <tr>
+                <td><label for="txtAFM">AFM</label></td>
+                <td><input id="txtAFM" name="AFM" value="@Model.SelectedCustomer.AFM"></td>
+            </tr>
+            <tr>
+                <td><label for="chkActive">Active</label></td>
+                <td><input id="chkActive" type="checkbox" name="active" value="@Model.SelectedCustomer.Active" onchange="SetValue();"></td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div style="display: flex">
+                        <button class="btn btn-warning" asp-page-handler="cancel">Cancel</button>
+                        @if (Model.SelectedCustomer.Id > 0)
+                        {
+                            <button class="btn btn-danger" asp-page-handler="delete">Delete</button>
+                        }
+                        <button class="btn btn-success" type="submit">Save</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script>
+
+    function ValidateForm() {
+        var pattern = /^\d{9}$/;
+        var afm = document.getElementById("txtAFM").innerHTML;
+
+        if (!afm.match(pattern)) {
+            alert("AFM must be 9 numbers");
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function SetValue() {
+        var active = document.getElementById("chkActive")
+        if (active.checked) {
+            @Model.SelectedCustomer.Active = true;
+        } else {
+            @Model.SelectedCustomer.Active = false;
+        }
+    }
+</script>

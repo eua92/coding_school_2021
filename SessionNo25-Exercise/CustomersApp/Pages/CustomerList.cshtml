@@ -1,0 +1,30 @@
+﻿@page
+@model CustomersApp.Pages.CustomerListModel
+@{
+}
+
+<a href="/Details/0">Add New</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>AFM</th>
+            <th>Active</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model.Customers)
+        {
+            <tr>
+                <td>@customer.Id</td>
+                <td>@customer.Name</td>
+                <td>@customer.Surname</td>
+                <td>@customer.AFM</td>
+                <td>@customer.Active</td>
+                <td><a href="Details/@customer.Id">Edit</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
